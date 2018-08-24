@@ -1,7 +1,5 @@
-import Header from './Header';
-import Footer from './Footer';
+import PostIndex from './PostIndex';
 
 export {
-	Header,
-	Footer
+	PostIndex
 }

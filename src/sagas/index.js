@@ -2,8 +2,8 @@ import {
   fork
 } from 'redux-saga/effects';
 
-import Auth from './AuthSaga';
+import Post from './PostSaga';
 
 export default function* root() {
-	yield fork(Auth);
+	yield fork(Post);
 };

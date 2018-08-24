@@ -35,7 +35,7 @@ const deleteCall = (url, headers) => new Promise((resolve) => {
   .catch(error => resolve(error.response));
 });
 
-export default {
+export {
   get,
   post,
   update,
