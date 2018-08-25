@@ -5,3 +5,10 @@ export function fetchPosts() {
     type: actionTypes.FETCH_POSTS
   };
 }
+
+export function savePost(data) {
+	return {
+		type: actionTypes.SAVE_POST,
+		data
+	}
+}

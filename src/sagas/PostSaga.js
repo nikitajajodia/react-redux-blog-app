@@ -5,7 +5,7 @@ import {
   call
 } from 'redux-saga/effects';
 
-import { get } from '../api';
+import { get, post } from '../api';
 
 import actionTypes from '../actions/actionTypes';
 
@@ -29,6 +29,20 @@ function* fetchPosts() {
   }
 }
 
+function* savePost() {
+  while (true) {
+    const data = yield take(actionTypes.SAVE_POST);
+    const payload = data.data.toJS();
+    const response = yield call(post, `posts${API_KEY}`, payload , null);
+    if(response.status == 201) {
+      yield put({
+        type: actionTypes.SAVE_POST_SUCCESS
+      })
+    }
+  }
+}
+
 export default function* () {
   yield fork(fetchPosts);
+  yield fork(savePost);
 }
