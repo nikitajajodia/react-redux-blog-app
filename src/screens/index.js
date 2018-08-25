@@ -1,5 +1,7 @@
 import HomePage from './HomePage';
+import AddPost from './AddPost';
 
 export {
-	HomePage
+	HomePage,
+	AddPost
 }
