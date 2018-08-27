@@ -5,7 +5,7 @@ import {
   call
 } from 'redux-saga/effects';
 
-import { get, post } from '../api';
+import { get, post, deleteCall } from '../api';
 
 import actionTypes from '../actions/actionTypes';
 
@@ -55,8 +55,22 @@ function* fetchPost() {
   }
 }
 
+function* deletePost() {
+  while (true) {
+    const {
+      id 
+    } = yield take(actionTypes.DELETE_POST);
+    const response = yield call(deleteCall, `posts/${id}${API_KEY}`, null, null);
+    yield put({
+      type: actionTypes.DELETE_POST_SUCCESS,
+      ...response
+    })
+  }
+}
+
 export default function* () {
   yield fork(fetchPosts);
   yield fork(savePost);
   yield fork(fetchPost);
+  yield fork(deletePost);
 }

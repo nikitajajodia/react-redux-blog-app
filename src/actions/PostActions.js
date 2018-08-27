@@ -19,3 +19,10 @@ export function fetchPost(id) {
 		id
 	}
 }
+
+export function deletePost(id) {
+	return {
+		type: actionTypes.DELETE_POST,
+		id
+	}
+}

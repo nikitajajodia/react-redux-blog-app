@@ -14,3 +14,11 @@ label {
 .ml-10 {
 	margin-left: 10px;
 }
+
+.show-post-container {
+	padding-top: 20px;
+}
+
+.show-post-container .home-btn {
+	margin-bottom: 15px;
+}
