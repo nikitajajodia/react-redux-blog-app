@@ -12,6 +12,8 @@ import {
 
 import { HomePage, AddPost } from './screens';
 
+import { PostShow } from './components';
+
 import {
   Provider
 } from 'react-redux';
@@ -28,7 +30,8 @@ class App extends React.Component {
     		<BrowserRouter history={browserHistory}>
             <Switch>
               <Route exact path="/" component={HomePage} />
-            	<Route path="/posts/new" component={AddPost} />
+              <Route path="/posts/new" component={AddPost} />
+            	<Route path="/posts/:id" component={PostShow} />
             </Switch>
             </BrowserRouter>
     	</Provider>

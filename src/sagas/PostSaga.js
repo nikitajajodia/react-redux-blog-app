@@ -42,7 +42,21 @@ function* savePost() {
   }
 }
 
+function* fetchPost() {
+  while (true) {
+    const {
+      id 
+    } = yield take(actionTypes.FETCH_POST);
+    const response = yield call(get, `posts/${id}${API_KEY}`, null, null);
+    yield put({
+      type: actionTypes.FETCH_POST_SUCCESS,
+      ...response
+    })
+  }
+}
+
 export default function* () {
   yield fork(fetchPosts);
   yield fork(savePost);
+  yield fork(fetchPost);
 }

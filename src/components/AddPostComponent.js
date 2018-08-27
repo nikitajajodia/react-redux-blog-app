@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form/immutable';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { PostActions } from '../actions'
+import { PostActions } from '../actions';
 
 class AddPostComponent extends Component {
 	renderField(field) {

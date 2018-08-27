@@ -12,3 +12,10 @@ export function savePost(data) {
 		data
 	}
 }
+
+export function fetchPost(id) {
+	return {
+		type: actionTypes.FETCH_POST,
+		id
+	}
+}

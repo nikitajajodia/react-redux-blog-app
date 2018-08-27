@@ -3,7 +3,8 @@ import actionTypes from '../actions/actionTypes';
 
 const initialState = Map({
 	posts: [],
-	postCreated: false
+	postCreated: false,
+	post: []
 });
 
 export default function blogReducer(state = initialState, action) {
@@ -14,6 +15,10 @@ export default function blogReducer(state = initialState, action) {
 
 		case actionTypes.SAVE_POST_SUCCESS: {
 			return state.set('postCreated', true);
+		}
+
+		case actionTypes.FETCH_POST_SUCCESS: {
+			return state.set('post', action.data);
 		}
 
 		default:
